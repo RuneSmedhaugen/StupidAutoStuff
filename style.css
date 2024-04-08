@@ -1,0 +1,15 @@
+.character {
+    width: 50px;
+    margin: 0;
+    height: auto;
+    text-align: center;
+}
+
+.character p {
+    font-size: 16px;
+}
+
+.characterImg {
+    width: 60px;
+    height: 60px;
+}
