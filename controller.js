@@ -1,4 +1,4 @@
-
+//så langt jeg kom på tirsdag etter å ha startet på nytt
 
 function generateShopCharacters() {
     const shopCharacters = [];

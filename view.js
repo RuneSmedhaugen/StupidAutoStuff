@@ -1,4 +1,4 @@
-createHtml();
+createHtml(); //har ikke laget updateView enda
 
 function createHtml() {
     const html = document.getElementById('app');

@@ -1,3 +1,5 @@
+//kan fort komme endringer her hvis jeg har gjort noe feil eller noe må legges til
+
 const model = {
     app: {
         page: null,
