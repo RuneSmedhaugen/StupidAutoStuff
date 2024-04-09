@@ -1,15 +1,67 @@
-.character {
-    width: 50px;
-    margin: 0;
+.playerStats {
+    display: flex;
+    align-items: center;
+}
+
+.hearts {
+    font-size: 24px;
+}
+
+.battlesWon {
+    margin-left: 20px;
+}
+
+.heart {
+    color: red;
+    margin-right: 5px;
+}
+
+
+.shop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.shopItem {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.shopItemImg {
+    width: 100%;
     height: auto;
+    margin-bottom: 5px;
+
+}
+
+.shopItemInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-.character p {
-    font-size: 16px;
+.shopItemInfo p {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
 }
 
-.characterImg {
-    width: 60px;
-    height: 60px;
+.shopContainer {
+    border: 2px solid black;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.battleButton {
+    height: 100px;
+    width: 300px;
+    font-size: 90px;
+    color: orangered;
+    background-color: black;
+    box-shadow: 1px 1px 1px 5px;
 }
