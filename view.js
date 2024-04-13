@@ -6,21 +6,18 @@ function createHtml() {
     const playerHtml = document.createElement('div');
     playerHtml.classList.add('playerInfo');
 
-    // Display hearts for player's health
     const heartsCount = model.data.player.health;
     const heartsHtml = Array(heartsCount).fill('<span class="heart">&hearts;</span>').join('');
 
-    // Display battles won
     const battlesWon = model.data.player.battlesWon;
-    const battlesWonText = `Battles Won: ${battlesWon} / 15`; // Win 15 battles to win the game
+    const battlesWonText = `Battles Won: ${battlesWon} / 15`;
     const battlesWonDiv = document.createElement('div');
     battlesWonDiv.textContent = battlesWonText;
 
-    // Display player's coins
+ 
     const coinsDiv = document.createElement('div');
     coinsDiv.textContent = `Coins: ${model.data.player.coins}`;
 
-    // Append hearts, battles won, and coins to the playerHtml div
     playerHtml.innerHTML = `
         <h3>Your Team</h3>
         <div class="playerStats">
@@ -46,13 +43,13 @@ function createHtml() {
             <p>HP: ${character.health}</p>
             <p>ATK: ${character.attack}</p>
         `;
-        teamContainer.appendChild(characterDiv); // Append each team member to the team container
+        teamContainer.appendChild(characterDiv); 
     });
     
-    // Append the team container to the playerHtml div
+    
     playerHtml.appendChild(teamContainer);
 
-    // Create the shop section
+    
     const shopHtml = document.createElement('div');
     shopHtml.classList.add('shop');
     shopHtml.classList.add('shopContainer');
@@ -61,14 +58,14 @@ function createHtml() {
 
     const shopItemList = document.createElement('div');
     shopItemList.classList.add('shopItemList');
-    shopItemList.classList.add('flex-container'); // Add flex-container class for flexbox
+    shopItemList.classList.add('flex-container'); 
 
-    const shopCharacters = generateShopCharacters(); // Assume you have a function to generate random shop characters
+    const shopCharacters = generateShopCharacters(); 
 
     shopCharacters.forEach(character => {
         const shopItem = document.createElement('div');
         shopItem.classList.add('shopItem');
-        shopItem.id = `shopItem-${character.name}`; // Unique ID for each shop item
+        shopItem.id = `shopItem-${character.name}`;
         shopItem.innerHTML = `
             <img src="${character.imageUrl}" alt="${character.name}" class="shopItemImg">
             <p>${character.name}</p>
@@ -79,12 +76,12 @@ function createHtml() {
         shopItemList.appendChild(shopItem);
     });
 
-    // Append elements to the HTML
-    shopHtml.appendChild(shopHeader); // Add shop header
-    shopHtml.appendChild(shopItemList); // Add shop items to shopHtml
+    
+    shopHtml.appendChild(shopHeader); 
+    shopHtml.appendChild(shopItemList); 
 
-    html.appendChild(playerHtml); // Append player info
-    html.appendChild(shopHtml); // Append shop
+    html.appendChild(playerHtml); 
+    html.appendChild(shopHtml);
 }
 
 

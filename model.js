@@ -111,11 +111,39 @@ const model = {
                 imageUrl: "img/vilmaa.png",
                 ability: "",
             },
+            {
+                name: "blubber",
+                health: 5,
+                attack: 5,
+                imageUrl: "img/blubber.png",
+                ability: "",
+            },
+            {
+                name: "milk",
+                health: 5,
+                attack: 5,
+                imageUrl: "img/milk.png",
+                ability: "",
+            },
+            {
+                name: "OnOff",
+                health: 5,
+                attack: 5,
+                imageUrl: "img/onoff.png",
+                ability: "",
+            },
+            {
+                name: "pointface",
+                health: 5,
+                attack: 5,
+                imageUrl: "img/pointface.png",
+                ability: "",           
+            },
 
         ],
 
         items: [
-            //ingenting enda, dette er litt mer "nice to have"
+           
         ],
 
     },
