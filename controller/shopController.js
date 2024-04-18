@@ -1,4 +1,4 @@
-//så langt jeg kom på tirsdag etter å ha startet på nytt
+
 
 function generateShopCharacters() {
     const shopCharacters = [];
@@ -50,10 +50,6 @@ function generateShopCharacters() {
     }
 
     return shopCharacters;
-}
-
-function startBattle(){
-
 }
 
 function allowDrop(event) {

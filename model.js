@@ -143,7 +143,7 @@ const model = {
         ],
 
         items: [
-           
+           // Har noen items nå, men har ikke lagt de inn enda
         ],
 
     },
