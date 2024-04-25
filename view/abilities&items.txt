@@ -6,7 +6,7 @@ give +2 health to the 1st character
 give +2 attack to the 1st character
 deal 1 dmg to random enemy when taking damage
 take 1 less damage per hit
-get +2 damage per her
+get +2 damage per hit
 give 1 random enemy -2 attack (can't go lower than 1) before battle
 make 1 random enemy take 1 more damage per hit before battle
 give 1 extra coin per battle
@@ -20,9 +20,9 @@ explode on death
 if knocks out, attack again
 
 ITEMS:
-give +2 health permanently
-give +2 attack permanently
-give +1 attack and +1 health permanently
-take 1 less damage (swapable)
-take 3 less damage 2 times (swapable)
-do double damage once (swapable)
+give +2 health permanently - 
+give +2 attack permanently -
+give +1 attack and +1 health permanently -
+take 1 less damage (swapable) - 
+take 3 less damage 2 times (swapable) -
+do double damage once (swapable) -

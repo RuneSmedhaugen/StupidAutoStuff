@@ -42,33 +42,28 @@ function buyCharacter(characterName) {
 function generateShopCharacters() {
     const shopCharacters = [];
     const characters = model.data.characters;
-    const numShopItems = 5;
+    let numShopItems = 5;
 
     for (let i = 0; i < numShopItems; i++) {
         const randomIndex = Math.floor(Math.random() * characters.length);
         shopCharacters.push(characters[randomIndex]);
+        
     }
 
     return shopCharacters;
 }
 
-function allowDrop(event) {
-    event.preventDefault();
+
+function switchToPodiumLeft() {
+    const team = model.data.player.team;
+    const firstCharacter = team.shift(); 
+    team.push(firstCharacter); 
+    updateView();
 }
 
-function handleDrop(event) {
-    event.preventDefault();
-    const sourceId = event.dataTransfer.getData('text/plain');
-    const sourceElement = document.getElementById(sourceId);
-    const targetElement = event.target.closest('.teamMember');
-    if (targetElement) {
-        const sourceIndex = parseInt(sourceId.split('-')[1]);
-        const targetIndex = parseInt(targetElement.id.split('-')[1]);
-        
-        const temp = model.data.player.team[sourceIndex];
-        model.data.player.team[sourceIndex] = model.data.player.team[targetIndex];
-        model.data.player.team[targetIndex] = temp;
-        
-        targetElement.parentNode.insertBefore(sourceElement, targetElement);
-    }
+function switchToPodiumRight() {
+    const team = model.data.player.team;
+    const lastCharacter = team.pop(); // Remove the character from the end
+    team.unshift(lastCharacter); // Add the character to the beginning
+    updateView(); // Update the view to reflect the changes
 }

@@ -4,6 +4,8 @@ function createHtml() {
     const html = document.getElementById('app');
     html.innerHTML = '';
 
+    
+
     const playerHtml = document.createElement('div');
     playerHtml.classList.add('playerInfo');
 
@@ -30,8 +32,6 @@ function createHtml() {
 
     const teamContainer = document.createElement('div');
     teamContainer.classList.add('teamContainer');
-    teamContainer.addEventListener('dragover', allowDrop);
-    teamContainer.addEventListener('drop', handleDrop);
 
     const podiums = Array(5).fill(null); 
 
@@ -46,6 +46,8 @@ function createHtml() {
     const podiumContainer = document.createElement('div');
     podiumContainer.classList.add('podiumContainer');
 
+
+
     podiums.forEach((character, index) => {
         const podium = document.createElement('div');
         podium.classList.add('podium');
@@ -54,13 +56,14 @@ function createHtml() {
         if (character) {
             const characterDiv = document.createElement('div');
             characterDiv.classList.add('teamMember');
-            characterDiv.draggable = true; 
             characterDiv.id = `teamMember-${character.name}`;
             characterDiv.innerHTML = `
                 <img src="${character.imageUrl}" alt="${character.name}" class="teamMemberImg">
                 <p>Name: ${character.name}</p>
                 <p>HP: ${character.health}</p>
                 <p>ATK: ${character.attack}</p>
+                <button class="switchLeftBtn" onclick="switchToPodiumLeft(${index})">Left</button>
+                <button class="switchRightBtn" onclick="switchToPodiumRight(${index})">Right</button>
             `;
             podium.appendChild(characterDiv);
         } else {
