@@ -27,16 +27,16 @@ function startBattle(){
     updateView();
 }
 
-async function delay(){
-    return new Promise(resolve => setTimeout(resolve, 1000))
+async function delay(ms){
+    return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 async function battlemanager(){
     while(model.data.player.team[0].health >= 0 || model.input.battlePage.enemyTeam[0].health >= 0){
         model.data.player.team[0].health -= model.input.battlePage.enemyTeam[0].atk
         model.input.battlePage.enemyTeam[0].health -= model.data.player.team[0].atk
-        updateview()
-        await delay()
+        updateView()
+        await delay(1000)
         if (model.data.player.team[0].health <= 0) {
             let index = model.data.player.team.findIndex(t => t.health <= 0)
             model.data.player.team.unshift(index, 1)
@@ -46,6 +46,9 @@ async function battlemanager(){
             model.input.battlePage.enemyTeam.unshift(index, 1)
         }
     }
-    
+    app.innerHTML = (model.data.player.team[0].health <= 0 ? 'Enemy Vant' : 'Du Vant') + '<button onclick="updateview()">Gå tilbake til start</button>'
+    model.data.player.team.forEach(h => h.health = h.maxhealth)
 }
+
+
 
