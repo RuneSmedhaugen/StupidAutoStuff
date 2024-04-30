@@ -42,7 +42,7 @@ function createBattleHtml() {
         </div>
     `).join('')}
 </div>
-    <button onclick="startBattle()">Start Battle</button>
+    <button onclick="battlemanager()">Start Battle</button>
 </div>
 `;
 }
@@ -53,7 +53,7 @@ function generateEnemyTeam(playerTeamSize) {
 
     while (enemyTeam.length < playerTeamSize) {
         const randomIndex = Math.floor(Math.random() * characters.length);
-        enemyTeam.push(characters[randomIndex]);
+        enemyTeam.push(JSON.parse(JSON.stringify(characters[randomIndex])));
     }
 console.log('enemy team:', enemyTeam)
     return enemyTeam;
