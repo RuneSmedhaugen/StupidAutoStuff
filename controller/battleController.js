@@ -27,3 +27,13 @@ function startBattle(){
     updateView();
 }
 
+async function delay(){
+    return new Promise(resolve => setTimeout(resolve, 1000))
+}
+
+async function battlemanager(){
+    for(let i = 0; checkhp(); i++){
+        
+    }
+}
+
