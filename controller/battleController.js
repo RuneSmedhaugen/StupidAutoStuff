@@ -1,4 +1,4 @@
-function startBattle(){
+function startBattle() {
     const playerCharacter = model.input.battlePage.playerTeam[0];
     const enemyCharacter = model.input.battlePage.enemyTeam[0];
     const playerDamage = playerCharacter.attack;
@@ -27,25 +27,31 @@ function startBattle(){
     updateView();
 }
 
-async function delay(ms){
+async function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-async function battlemanager(){
-    while(model.data.player.team[0].health >= 0 && model.input.battlePage.enemyTeam[0].health >= 0){
+async function battlemanager() {
+    while (model.data.player.team[0].health >= 0 && model.input.battlePage.enemyTeam[0].health >= 0) {
         model.data.player.team[0].health -= model.input.battlePage.enemyTeam[0].attack
         model.input.battlePage.enemyTeam[0].health -= model.data.player.team[0].attack
         await delay(2000)
-        if (model.input.battlePage.enemyTeam[0].health <= 0) {
-            let index = model.input.battlePage.enemyTeam.findIndex(t => t.health <= 0)
-            model.input.battlePage.enemyTeam.unshift(index, 1)
+        if (model.input.battlePage.enemyTeam[0].health <= 0 && model.input.battlePage.enemyTeam.some(c => c.health > 0)) {
+            let ienemy = model.input.battlePage.enemyTeam.findIndex(t => t.health <= 0)
+            let newenemy = model.input.battlePage.enemyTeam.splice(ienemy, 1)[0]
+            model.input.battlePage.enemyTeam.unshift(newenemy)
         }
-        if (model.data.player.team[0].health <= 0) {
-            let index = model.data.player.team.findIndex(t => t.health <= 0)
-            model.data.player.team.unshift(index, 1)
+        if (model.data.player.team[0].health <= 0 && model.data.player.team.some(c => c.health > 0)) {
+            let ifriendly = model.data.player.team.findIndex(t => t.health > 0)
+            let newfriendly = model.data.player.team.splice(ifriendly, 1)[0]
+            model.data.player.team.unshift(newfriendly)
         }
     }
-    app.innerHTML = (model.data.player.team[0].health <= 0 ? 'Enemy Vant' : 'Du Vant') + '<button onclick="updateView()">Gå tilbake til start</button>'
+    let message = null
+    if (model.data.player.team[0].health <= 0 && model.input.battlePage.enemyTeam[0].health < 0) message = 'Du tapte'
+    else if (model.data.player.team[0].health > 0 && model.input.battlePage.enemyTeam[0].health <= 0) message = 'Du vant'
+    else message = 'Det ble uavgjort'
+    app.innerHTML = message + '<button onclick="updateView()">Gå tilbake til start</button>'
     model.data.player.team.forEach(h => h.health = h.maxhealth)
     model.data.player.coins = 10
 }
