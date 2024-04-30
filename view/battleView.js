@@ -34,7 +34,9 @@ function createBattleHtml() {
         `).join('')}
     </div>
     
+    <div>
     <button onclick="battlemanager()" style="height: 3vh; width: 8vw;">Start Battle</button>
+    </div>
 
     <div id="enemy-team" class="enemy-team">
     <h3>Enemy Team</h3>

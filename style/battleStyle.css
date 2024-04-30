@@ -35,9 +35,15 @@ img.character-img {
 }
 
 #viewparent{
-    height: 100vh;
+    height: 70vh;
     width: 100vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+#viewparent > * { 
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
