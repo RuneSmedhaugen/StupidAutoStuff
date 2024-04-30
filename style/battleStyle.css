@@ -2,3 +2,34 @@ img.character-img {
     height: 100px;
     width: auto;
 }
+
+#battleparent{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#battleparent > * { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#battleparent > :nth-child(1) {
+    display: grid;
+}
+#battleparent > :nth-child(5) {
+    display: grid;
+}
+
+#cardparent{
+    width: 10vw;
+    height: 15vh;
+    display: flex;
+}
+
+#cardparent > img{
+    width: 10vw;
+    height: auto;
+}

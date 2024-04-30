@@ -203,7 +203,6 @@ const model = {
                 name: "randomDmg",
                 desciption: "do 1 damage to random enemy before battle begins",
                 function: randomDmg(),
-
             },
             {
                 id: 1,
