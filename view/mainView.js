@@ -103,13 +103,7 @@ function createHtml() {
         shopItemList.appendChild(shopItem);
     });
 
-    const items = document.createElement('div');
-    items.classList.add('items');
-    items.id = `items`;
-    items.innerHTML = `
-    
 
-    `;
 
     shopHtml.appendChild(shopHeader);
     shopHtml.appendChild(shopItemList);
