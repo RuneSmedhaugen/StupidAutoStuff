@@ -34,6 +34,7 @@ const model = {
         characters: [
             {
                 name: "crawliphant",
+                maxhealth: 5,
                 health: 5,
                 attack: 1,
                 imageUrl: "img/crawliphant.png",
@@ -42,6 +43,7 @@ const model = {
             {
                 name: "narwall",
                 health: 3,
+                maxhealth: 3,
                 attack: 4,
                 imageUrl: "img/narwall.png",
                 ability: 1
@@ -49,6 +51,7 @@ const model = {
             {
                 name: "susage",
                 health: 2,
+                maxhealth: 2,
                 attack: 5,
                 imageUrl: "img/Susage.png",
                 ability: 2,
@@ -56,6 +59,7 @@ const model = {
             {
                 name: "cheesy",
                 health: 3,
+                maxhealth: 3,
                 attack: 2,
                 imageUrl: "img/Cheesy.png",
                 ability: 3,
@@ -63,6 +67,7 @@ const model = {
             {
                 name: "cooki",
                 health: 1,
+                maxhealth: 1,
                 attack: 5,
                 imageUrl: "img/cooki.png",
                 ability: 4,
@@ -70,6 +75,7 @@ const model = {
             {
                 name: "hamburglar",
                 health: 4,
+                maxhealth: 4,
                 attack: 3,
                 imageUrl: "img/hammy2.png",
                 ability: 5,
@@ -77,6 +83,7 @@ const model = {
             {
                 name: "kirky",
                 health: 5,
+                maxhealth: 5,
                 attack: 1,
                 imageUrl: "img/Kirky.png",
                 ability: 6,
@@ -84,6 +91,7 @@ const model = {
             {
                 name: "kolera",
                 health: 3,
+                maxhealth: 3,
                 attack: 10,
                 imageUrl: "img/Kolera.png",
                 ability: 7,
@@ -91,6 +99,7 @@ const model = {
             {
                 name: "Piggy",
                 health: 1,
+                maxhealth: 1,
                 attack: 5,
                 imageUrl: "img/piggy.png",
                 ability: 8,
@@ -98,6 +107,7 @@ const model = {
             {
                 name: "pink",
                 health: 5,
+                maxhealth: 5,
                 attack: 3,
                 imageUrl: "img/pink.png",
                 ability: 9,
@@ -105,6 +115,7 @@ const model = {
             {
                 name: "Stikky",
                 health: 2,
+                maxhealth: 2,
                 attack: 4,
                 imageUrl: "img/Stikky.png",
                 ability: 10,
@@ -112,6 +123,7 @@ const model = {
             {
                 name: "vilmaa",
                 health: 6,
+                maxhealth: 6,
                 attack: 2,
                 imageUrl: "img/vilmaa.png",
                 ability: 11,
@@ -119,6 +131,7 @@ const model = {
             {
                 name: "blubber",
                 health: 5,
+                maxhealth: 5,
                 attack: 5,
                 imageUrl: "img/blubber.png",
                 ability: 12,
@@ -126,6 +139,7 @@ const model = {
             {
                 name: "milk",
                 health: 5,
+                maxhealth: 5,
                 attack: 5,
                 imageUrl: "img/milk.png",
                 ability: 13,
@@ -133,6 +147,7 @@ const model = {
             {
                 name: "OnOff",
                 health: 5,
+                maxhealth: 5,
                 attack: 5,
                 imageUrl: "img/onoff.png",
                 ability: 14,
@@ -140,6 +155,7 @@ const model = {
             {
                 name: "pointface",
                 health: 5,
+                maxhealth: 5,
                 attack: 5,
                 imageUrl: "img/pointface.png",
                 ability: "deal 1 dmg to random enemy when taking damage",           
