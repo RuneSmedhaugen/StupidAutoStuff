@@ -52,6 +52,7 @@ async function battlemanager() {
         await battleview()
         await delay(1)
     }
+    console.log(model.data.player.team, model.input.battlePage.enemyTeam)
     await battleview()
     model.data.player.team.forEach(h => h.health = h.maxhealth)
     model.data.player.coins = 10
@@ -85,8 +86,7 @@ function genwho(who) {
     return /*HTML*/`
     <div id="cardparent">
         <div>
-            <div style="width: ${(who.health / who.maxhealth * 100).toString()}%; background-color: green; height: 2vh"></div>
-            <div style="flex-grow: 1; background-color: red;"></div>
+            <div>${who.health + `/`+ who.maxhealth}</div>
             <img src="${who.imageUrl}" style="width: 10vw; height:auto">
         </div>
     </div>
