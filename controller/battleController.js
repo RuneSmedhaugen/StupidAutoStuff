@@ -76,7 +76,7 @@ async function battleview(noend) {
 }
 
 function gencards(team, lead) {
-    let who = team === 'friendly' ? model.data.player.team : model.input.battlePage.enemyTeam;
+    let who = team === 'friendly' ? model.data.player.team : model.input.battlePage.enemyTeam
     if (lead) return genwho(who[0])
     else return who.slice(1).map(p => genwho(p)).join('')
 }
@@ -86,11 +86,11 @@ function genwho(who) {
     <div id="cardparent">
         <div>
         <div>${who.name}</div>
-            <div>${who.health + `/`+ who.maxhealth}</div>
+            <div>${who.health + ` / ` + who.maxhealth} HP</div>
             <img src="${who.imageUrl}" style="width: 10vw; height:auto">
         </div>
     </div>
-    `;
+    `
 }
 
 function checkend(noend) {
@@ -98,7 +98,7 @@ function checkend(noend) {
     let message = model.data.player.team[0].health > 0 && model.input.battlePage.enemyTeam[0].health <= 0 ? 'Du vant' :
                   model.data.player.team[0].health <= 0 && model.input.battlePage.enemyTeam[0].health > 0 ? 'Du tapte' :
                   'Det ble uavgjort'
-    return message + `<button onclick="updateView()">Gå tilbake til start</button>`
+    return `<div><div>${message}</div><button onclick="updateView()">Gå tilbake til start</button></div>`
 }
 
 
