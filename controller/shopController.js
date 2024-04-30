@@ -53,3 +53,12 @@ function switchToPodiumRight() {
     team.unshift(lastCharacter); 
     updateView();
 }
+
+function sellCharacter(characterName) {
+    const characterIndex = model.data.player.team.findIndex(char => char.name === characterName);
+    if (characterIndex !== -1) {
+        model.data.player.team.splice(characterIndex, 1); 
+        model.data.player.coins++; 
+        updateView(); 
+    }
+}
