@@ -20,6 +20,8 @@ function createBattleHtml() {
     <h2>Battle!</h2>
     <div class="battle-log">Battle log:</div>
     <div id="battle-log-content">${battleLog}</div>
+
+    <div id="viewparent">
     <div id="player-team" class="player-team">
         <h3>Your Team</h3>
         ${model.data.player.team.map(character => `
@@ -31,6 +33,7 @@ function createBattleHtml() {
             </div>
         `).join('')}
     </div>
+
     <div id="enemy-team" class="enemy-team">
     <h3>Enemy Team</h3>
     ${enemyTeam.map(character => `
@@ -42,6 +45,8 @@ function createBattleHtml() {
         </div>
     `).join('')}
 </div>
+</div>
+
     <button onclick="battlemanager()">Start Battle</button>
 </div>
 `;
