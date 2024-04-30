@@ -63,6 +63,7 @@ function createHtml() {
                 <p>HP: ${character.health}</p>
                 <p>ATK: ${character.attack}</p>
                 <button class="switchLeftBtn" onclick="switchToPodiumLeft(${index})">Left</button>
+                <button class="sellButton" onclick="sellCharacter('${character.name}')">Sell (+1 coin)</button>
                 <button class="switchRightBtn" onclick="switchToPodiumRight(${index})">Right</button>
             `;
             podium.appendChild(characterDiv);
