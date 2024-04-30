@@ -82,9 +82,11 @@ function gencards(team, lead) {
 }
 
 function genwho(who) {
+    
     return /*HTML*/`
     <div id="cardparent">
         <div>
+        <div>${who.name}</div>
             <div>${who.health + `/`+ who.maxhealth}</div>
             <img src="${who.imageUrl}" style="width: 10vw; height:auto">
         </div>

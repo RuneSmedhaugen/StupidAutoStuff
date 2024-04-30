@@ -29,7 +29,7 @@ const model = {
         enemy: {
             team: [],
         },
-
+        
 //jeg vet at abilities ikke er satt opp riktig :p tallene er bare for å huske hvilken de skal ha
         characters: [
             {
