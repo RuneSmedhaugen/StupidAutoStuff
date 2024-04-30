@@ -25,13 +25,13 @@
 }
 
 .shopItem {
-    width: 120px;
+    width: 120px; /* Adjust this value as needed */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .shopItemImg {
-    width: 100%;
-    height: auto;
-
+    width: 100px; /* Adjust this value as needed */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .shopItemInfo {
@@ -91,8 +91,8 @@
 }
 
 .teamMemberImg {
-    width: 80%; 
-    max-height: 80px; 
+    width: 100px; 
+    max-height: auto; 
 }
 
 .teamContainer {

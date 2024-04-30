@@ -25,6 +25,8 @@ function createHtml() {
                                 <button class="switchLeftBtn" onclick="switchToPodiumLeft(${index})">Left</button>
                                 <button class="sellButton" onclick="sellCharacter('${character.name}')">Sell (+1 coin)</button>
                                 <button class="switchRightBtn" onclick="switchToPodiumRight(${index})">Right</button>
+
+                                
                             </div>
                         ` : 'Empty'}
                     </div>
@@ -32,7 +34,6 @@ function createHtml() {
             </div>
         </div>
         <div class="shopContainer">
-            <h3>Shop</h3>
             <div class="shopItemList flex-container">
                 ${generateShopCharacters().map(character => `
                     <div class="shopItem" id="shopItem-${character.name}">
@@ -44,6 +45,15 @@ function createHtml() {
                         <button onclick="buyCharacter('${character.name}')">Buy (3 coins)</button>
                     </div>
                 `).join('')}
+
+                ${generateRandomItems().map(item => `
+                <div class="shopItem" id="shopItem-${item.name}">
+                    <p> <img src="${item.imageUrl}" alt="${item.name}" class="shopItemImg">
+                    <p> ${item.name}</p>
+                    <P> ${item.ability}</p>
+                    <button onclick="buyItem('${item.name}')">Buy (3 coins)</button>
+                </div>
+            `).join('')}
             </div>
         </div>
     </div>
