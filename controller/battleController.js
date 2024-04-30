@@ -32,7 +32,7 @@ async function delay(){
 }
 
 async function battlemanager(){
-    while(model.data.player.team[0].health <= 0 || model.input.battlePage.enemyTeam[0].health <= 0){
+    while(model.data.player.team[0].health >= 0 || model.input.battlePage.enemyTeam[0].health >= 0){
         model.data.player.team[0].health -= model.input.battlePage.enemyTeam[0].atk
         model.input.battlePage.enemyTeam[0].health -= model.data.player.team[0].atk
         updateview()
@@ -46,5 +46,6 @@ async function battlemanager(){
             model.input.battlePage.enemyTeam.unshift(index, 1)
         }
     }
+    
 }
 
