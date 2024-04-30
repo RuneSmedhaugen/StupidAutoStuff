@@ -40,7 +40,7 @@ async function battlemanager() {
         await battleview()
         await delay(1)
         if (model.input.battlePage.enemyTeam[0].health <= 0 && model.input.battlePage.enemyTeam.some(c => c.health > 0)) {
-            let ienemy = model.input.battlePage.enemyTeam.findIndex(t => t.health <= 0)
+            let ienemy = model.input.battlePage.enemyTeam.findIndex(t => t.health > 0)
             let newenemy = model.input.battlePage.enemyTeam.splice(ienemy, 1)[0]
             model.input.battlePage.enemyTeam.unshift(newenemy)
         }
@@ -52,7 +52,6 @@ async function battlemanager() {
         await battleview()
         await delay(1)
     }
-    console.log(model.data.player.team, model.input.battlePage.enemyTeam)
     await battleview()
     model.data.player.team.forEach(h => h.health = h.maxhealth)
     model.data.player.coins = 10
