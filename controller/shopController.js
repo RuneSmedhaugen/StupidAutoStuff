@@ -21,7 +21,7 @@ function buyCharacter(characterName) {
     const character = model.data.characters[characterIndex];
     if (model.data.player.coins >= 3 && model.data.player.team.length < 5) {
         model.data.player.coins -= 3; 
-        model.data.player.team.push(character); 
+        model.data.player.team.push.JSON.parse(JSON.stringify(character)); 
 
        
         const shopItem = document.getElementById(`shopItem-${characterName}`);
