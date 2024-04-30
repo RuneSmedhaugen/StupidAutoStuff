@@ -35,8 +35,7 @@ async function battlemanager(){
     while(model.data.player.team[0].health >= 0 || model.input.battlePage.enemyTeam[0].health >= 0){
         model.data.player.team[0].health -= model.input.battlePage.enemyTeam[0].atk
         model.input.battlePage.enemyTeam[0].health -= model.data.player.team[0].atk
-        updateView()
-        await delay(1000)
+        await delay(2000)
         if (model.data.player.team[0].health <= 0) {
             let index = model.data.player.team.findIndex(t => t.health <= 0)
             model.data.player.team.unshift(index, 1)
@@ -46,7 +45,7 @@ async function battlemanager(){
             model.input.battlePage.enemyTeam.unshift(index, 1)
         }
     }
-    app.innerHTML = (model.data.player.team[0].health <= 0 ? 'Enemy Vant' : 'Du Vant') + '<button onclick="updateview()">Gå tilbake til start</button>'
+    app.innerHTML = (model.data.player.team[0].health <= 0 ? 'Enemy Vant' : 'Du Vant') + '<button onclick="updateView()">Gå tilbake til start</button>'
     model.data.player.team.forEach(h => h.health = h.maxhealth)
 }
 
