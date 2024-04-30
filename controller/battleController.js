@@ -37,7 +37,7 @@ async function battlemanager() {
         await delay(1)
         model.data.player.team[0].health -= model.input.battlePage.enemyTeam[0].attack
         model.input.battlePage.enemyTeam[0].health -= model.data.player.team[0].attack
-        await battleview()
+        await battleview('noend')
         await delay(1)
         if (model.input.battlePage.enemyTeam[0].health <= 0 && model.input.battlePage.enemyTeam.some(c => c.health > 0)) {
             let ienemy = model.input.battlePage.enemyTeam.findIndex(t => t.health > 0)
@@ -57,7 +57,7 @@ async function battlemanager() {
     model.data.player.coins = 10
 }
 
-async function battleview() {
+async function battleview(noend) {
     app.innerHTML = /*HTML*/ `
     <div id="battleparent">
     
@@ -65,7 +65,7 @@ async function battleview() {
     
     <div id="friendlead">${gencards('friendly', 'lead')}</div>
     
-    <div id="button">${checkend()}</div>
+    <div id="button">${checkend(noend)}</div>
     
     <div id="enemylead">${gencards('enemy', 'lead')}</div>
     
@@ -93,8 +93,8 @@ function genwho(who) {
     `;
 }
 
-function checkend() {
-    if (model.input.battlePage.enemyTeam.some(c => c.health > 0) && model.data.player.team.some(c => c.health > 0)) return ''
+function checkend(noend) {
+    if (model.input.battlePage.enemyTeam.some(c => c.health > 0) && model.data.player.team.some(c => c.health > 0) || noend) return ''
     let message = model.data.player.team[0].health > 0 && model.input.battlePage.enemyTeam[0].health <= 0 ? 'Du vant' :
                   model.data.player.team[0].health <= 0 && model.input.battlePage.enemyTeam[0].health > 0 ? 'Du tapte' :
                   'Det ble uavgjort'

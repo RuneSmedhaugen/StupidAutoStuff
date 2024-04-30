@@ -1,5 +1,5 @@
 function lifesteal(){
-
+    
 }
 
 function randomDmg(){
