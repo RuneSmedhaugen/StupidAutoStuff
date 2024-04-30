@@ -32,21 +32,22 @@ async function delay(ms){
 }
 
 async function battlemanager(){
-    while(model.data.player.team[0].health >= 0 || model.input.battlePage.enemyTeam[0].health >= 0){
-        model.data.player.team[0].health -= model.input.battlePage.enemyTeam[0].atk
-        model.input.battlePage.enemyTeam[0].health -= model.data.player.team[0].atk
+    while(model.data.player.team[0].health >= 0 && model.input.battlePage.enemyTeam[0].health >= 0){
+        model.data.player.team[0].health -= model.input.battlePage.enemyTeam[0].attack
+        model.input.battlePage.enemyTeam[0].health -= model.data.player.team[0].attack
         await delay(2000)
-        if (model.data.player.team[0].health <= 0) {
-            let index = model.data.player.team.findIndex(t => t.health <= 0)
-            model.data.player.team.unshift(index, 1)
-        }
         if (model.input.battlePage.enemyTeam[0].health <= 0) {
             let index = model.input.battlePage.enemyTeam.findIndex(t => t.health <= 0)
             model.input.battlePage.enemyTeam.unshift(index, 1)
         }
+        if (model.data.player.team[0].health <= 0) {
+            let index = model.data.player.team.findIndex(t => t.health <= 0)
+            model.data.player.team.unshift(index, 1)
+        }
     }
     app.innerHTML = (model.data.player.team[0].health <= 0 ? 'Enemy Vant' : 'Du Vant') + '<button onclick="updateView()">Gå tilbake til start</button>'
     model.data.player.team.forEach(h => h.health = h.maxhealth)
+    model.data.player.coins = 10
 }
 
 
