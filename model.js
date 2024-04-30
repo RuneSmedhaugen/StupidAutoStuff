@@ -38,7 +38,12 @@ const model = {
                 health: 5,
                 attack: 1,
                 imageUrl: "img/crawliphant.png",
-                ability: 0,
+                ability: {
+                    id: 0,
+                    name: "randomDmg",
+                    desciption: "do 1 damage to random enemy before battle begins",
+                    function: randomDmg(),
+                },
             },
             {
                 name: "narwall",
@@ -46,7 +51,12 @@ const model = {
                 maxhealth: 3,
                 attack: 4,
                 imageUrl: "img/narwall.png",
-                ability: 1
+                ability:             {
+                    id: 1,
+                    name: "moreDmgPerHit",
+                    desciption: "get +2 damage per hit",
+                    function: moreDmgPerHit(),
+                },
             },
             {
                 name: "susage",
@@ -54,7 +64,12 @@ const model = {
                 maxhealth: 2,
                 attack: 5,
                 imageUrl: "img/Susage.png",
-                ability: 2,
+                ability:             {
+                    id: 2,
+                    name: "lessAttackToRandomEnemy",
+                    desciption: "give 1 random enemy -2 attack (can't go lower than 1) before battle",
+                    function: lessAttackToRandomEnemy(),
+                },
             },
             {
                 name: "cheesy",
@@ -62,7 +77,12 @@ const model = {
                 maxhealth: 3,
                 attack: 2,
                 imageUrl: "img/Cheesy.png",
-                ability: 3,
+                ability:             {
+                    id: 3,
+                    name: "randomEnemyScalingDmgTaken",
+                    desciption: "make 1 random enemy take 1 more damage per hit before battle per hit",
+                    function: randomEnemyScalingDmgTaken(),
+                },
             },
             {
                 name: "cooki",
@@ -70,7 +90,12 @@ const model = {
                 maxhealth: 1,
                 attack: 5,
                 imageUrl: "img/cooki.png",
-                ability: 4,
+                ability:             {
+                    id: 4,
+                    name: "shopCharacterDiscount",
+                    desciption: "discount on 1 shop character (only works 1 time)",
+                    function: shopCharacterDiscount(),
+                },
             },
             {
                 name: "hamburglar",
@@ -78,7 +103,12 @@ const model = {
                 maxhealth: 4,
                 attack: 3,
                 imageUrl: "img/hammy2.png",
-                ability: 5,
+                ability:             {
+                    id: 5,
+                    name: "giveFirstCharacterInLineMoreAttack",
+                    desciption: "give +2 attack to the 1st character",
+                    function: giveFirstCharacterInLineMoreAttack(),
+                },
             },
             {
                 name: "kirky",
@@ -86,7 +116,12 @@ const model = {
                 maxhealth: 5,
                 attack: 1,
                 imageUrl: "img/Kirky.png",
-                ability: 6,
+                ability:             {
+                    id: 6,
+                    name: "takeLessDmgPerHit",
+                    desciption: "take 1 less damage per hit",
+                    function: takeLessDmgPerHit(),
+                },
             },
             {
                 name: "kolera",
@@ -94,7 +129,12 @@ const model = {
                 maxhealth: 3,
                 attack: 10,
                 imageUrl: "img/Kolera.png",
-                ability: 7,
+                ability:             {
+                    id: 7,
+                    name: "ShopItemDiscount",
+                    desciption: "discount on 1 shop item (only works 1 time)",
+                    function: ShopItemDiscount(),
+                },
             },
             {
                 name: "Piggy",
@@ -102,7 +142,12 @@ const model = {
                 maxhealth: 1,
                 attack: 5,
                 imageUrl: "img/piggy.png",
-                ability: 8,
+                ability:             {
+                    id: 8,
+                    name: "critChance",
+                    desciption: "10% chance of doing double damage",
+                    function: critChance(),
+                },
             },
             {
                 name: "pink",
@@ -110,7 +155,12 @@ const model = {
                 maxhealth: 5,
                 attack: 3,
                 imageUrl: "img/pink.png",
-                ability: 9,
+                ability:             {
+                    id: 9,
+                    name: "dodgeChance",
+                    desciption: "20% chance of not taking damage",
+                    function: dodgeChance(),
+                },
             },
             {
                 name: "Stikky",
@@ -118,7 +168,12 @@ const model = {
                 maxhealth: 2,
                 attack: 4,
                 imageUrl: "img/Stikky.png",
-                ability: 10,
+                ability:             {
+                    id: 10,
+                    name: "healthToFirstCharacterInLine",
+                    desciption: "give +2 health to the 1st character",
+                    function: healthToFirstCharacterInLine(),
+                },
             },
             {
                 name: "vilmaa",
@@ -126,7 +181,12 @@ const model = {
                 maxhealth: 6,
                 attack: 2,
                 imageUrl: "img/vilmaa.png",
-                ability: 11,
+                ability:             {
+                    id: 11,
+                    name: "attackSecondCharacterInLine",
+                    desciption: "attack 2nd character in line if any instead of 1st",
+                    function: attackSecondCharacterInLine(),
+                },
             },
             {
                 name: "blubber",
@@ -134,7 +194,12 @@ const model = {
                 maxhealth: 5,
                 attack: 5,
                 imageUrl: "img/blubber.png",
-                ability: 12,
+                ability:             {
+                    id: 12,
+                    name: "summonSelf",
+                    desciption: "summon a 1/1 of itself",
+                    function: summonSelf(),
+                },
             },
             {
                 name: "milk",
@@ -142,7 +207,12 @@ const model = {
                 maxhealth: 5,
                 attack: 5,
                 imageUrl: "img/milk.png",
-                ability: 13,
+                ability:             {
+                    id: 13,
+                    name: "lifeSteal",
+                    desciption: "recover 1 health per attack",
+                    function: lifesteal(),
+                },
             },
             {
                 name: "OnOff",
@@ -150,7 +220,12 @@ const model = {
                 maxhealth: 5,
                 attack: 5,
                 imageUrl: "img/onoff.png",
-                ability: 14,
+                ability:             {
+                    id: 14,
+                    name: "giveCoinPerBattle",
+                    desciption: "give 1 extra coin per battle",
+                    function: giveCoinPerBattle(),
+                },
             },
             {
                 name: "pointface",
@@ -158,7 +233,12 @@ const model = {
                 maxhealth: 5,
                 attack: 5,
                 imageUrl: "img/pointface.png",
-                ability: 15,       
+                ability:             {
+                    id: 15,
+                    name: "returnDmgToRandomEnemyWhenTakingDamage",
+                    desciption: "deal 1 dmg to random enemy when taking damage",
+                    function: returnDmgToRandomEnemyWhenTakingDamage(),
+                },     
             },
 
         ],
@@ -195,107 +275,4 @@ const model = {
             imageUrl: "img/item 2 - gull kopp.png",
            },
         ],
-
-//blir nok endringer i hvordan disse er satt opp når jeg finner ut hvordan jeg skal få de til å fungere
-        abilities: [
-            {
-                id: 0,
-                name: "randomDmg",
-                desciption: "do 1 damage to random enemy before battle begins",
-                function: randomDmg(),
-            },
-            {
-                id: 1,
-                name: "moreDmgPerHit",
-                desciption: "get +2 damage per hit",
-                function: moreDmgPerHit(),
-            },
-            {
-                id: 2,
-                name: "lessAttackToRandomEnemy",
-                desciption: "give 1 random enemy -2 attack (can't go lower than 1) before battle",
-                function: lessAttackToRandomEnemy(),
-            },
-            {
-                id: 3,
-                name: "randomEnemyScalingDmgTaken",
-                desciption: "make 1 random enemy take 1 more damage per hit before battle per hit",
-                function: randomEnemyScalingDmgTaken(),
-            },
-            {
-                id: 4,
-                name: "shopCharacterDiscount",
-                desciption: "discount on 1 shop character (only works 1 time)",
-                function: shopCharacterDiscount(),
-            },
-            {
-                id: 5,
-                name: "giveFirstCharacterInLineMoreAttack",
-                desciption: "give +2 attack to the 1st character",
-                function: giveFirstCharacterInLineMoreAttack(),
-            },
-            {
-                id: 6,
-                name: "takeLessDmgPerHit",
-                desciption: "take 1 less damage per hit",
-                function: takeLessDmgPerHit(),
-            },
-            {
-                id: 7,
-                name: "ShopItemDiscount",
-                desciption: "discount on 1 shop item (only works 1 time)",
-                function: ShopItemDiscount(),
-            },
-            {
-                id: 8,
-                name: "critChance",
-                desciption: "10% chance of doing double damage",
-                function: critChance(),
-            },
-            {
-                id: 9,
-                name: "dodgeChance",
-                desciption: "20% chance of not taking damage",
-                function: dodgeChance(),
-            },
-            {
-                id: 10,
-                name: "healthToFirstCharacterInLine",
-                desciption: "give +2 health to the 1st character",
-                function: healthToFirstCharacterInLine(),
-            },
-            {
-                id: 11,
-                name: "attackSecondCharacterInLine",
-                desciption: "attack 2nd character in line if any instead of 1st",
-                function: attackSecondCharacterInLine(),
-            },
-            {
-                id: 12,
-                name: "summonSelf",
-                desciption: "summon a 1/1 of itself",
-                function: summonSelf(),
-            },
-            {
-                id: 13,
-                name: "lifeSteal",
-                desciption: "recover 1 health per attack",
-                function: lifesteal(),
-            },
-            {
-                id: 14,
-                name: "giveCoinPerBattle",
-                desciption: "give 1 extra coin per battle",
-                function: giveCoinPerBattle(),
-            },
-            {
-                id: 15,
-                name: "returnDmgToRandomEnemyWhenTakingDamage",
-                desciption: "deal 1 dmg to random enemy when taking damage",
-                function: returnDmgToRandomEnemyWhenTakingDamage(),
-            },
-
-        ]
-    },
-
-}
+    }}
