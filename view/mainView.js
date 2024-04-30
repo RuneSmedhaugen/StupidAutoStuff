@@ -97,7 +97,7 @@ function createHtml() {
             <p>${character.name}</p>
             <p>HP: ${character.health}</p>
             <p>ATK: ${character.attack}</p>
-            <p> Ability: ${character.ability.name}</p>
+            <p> Ability: ${character.ability.desciption}</p>
             <button onclick="buyCharacter('${character.name}')">Buy (3 coins)</button>
         `;
         shopItemList.appendChild(shopItem);
