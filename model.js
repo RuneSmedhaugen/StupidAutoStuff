@@ -158,7 +158,7 @@ const model = {
                 maxhealth: 5,
                 attack: 5,
                 imageUrl: "img/pointface.png",
-                ability: "deal 1 dmg to random enemy when taking damage",           
+                ability: 15,       
             },
 
         ],
