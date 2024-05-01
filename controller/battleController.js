@@ -95,10 +95,10 @@ function genwho(who) {
 
 function checkend(noend) {
     if (model.input.battlePage.enemyTeam.some(c => c.health > 0) && model.data.player.team.some(c => c.health > 0) || noend) return ''
-    let message = model.data.player.team[0].health > 0 && model.input.battlePage.enemyTeam[0].health <= 0 ? 'Du vant' :
-                  model.data.player.team[0].health <= 0 && model.input.battlePage.enemyTeam[0].health > 0 ? 'Du tapte' :
-                  'Det ble uavgjort'
-    return `<div><div>${message}</div><button onclick="updateView()">Gå tilbake til start</button></div>`
+    let message = model.data.player.team[0].health > 0 && model.input.battlePage.enemyTeam[0].health <= 0 ? 'You won!' :
+                  model.data.player.team[0].health <= 0 && model.input.battlePage.enemyTeam[0].health > 0 ? 'You lost.' :
+                  'You both suck'
+    return `<div><div>${message}</div><button onclick="updateView()">Go back to shop</button></div>`
 }
 
 
